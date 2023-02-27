@@ -10,7 +10,8 @@ var dir = path.join(__dirname, '../resources');
 var mime = {
     txt: 'text/plain',
     gif: 'image/gif',
-    jpg: 'image/jpeg',
+    jpg: 'image/jpg',
+    jpeg: 'image/jpeg',
     png: 'image/png'
 };
 
@@ -38,7 +39,7 @@ const server = http.createServer((req, res) => {
             }) 
 
             filesList += "To see spesific file \n";
-            myLogger.log(req);
+           
 
             console.log(filesList);
             res.end(filesList);
@@ -48,8 +49,9 @@ const server = http.createServer((req, res) => {
 
     if(method === "GET" && url)
     {
-        var reqpath = req.url.toString().split('?')[0];
-    
+        var reqpath = req.url;
+        console.log(reqpath);
+
         var file = path.join(dir, reqpath);
     
         if (file.indexOf(dir + path.sep) !== 0) {
@@ -57,15 +59,20 @@ const server = http.createServer((req, res) => {
             res.setHeader('Content-Type', 'text/plain');
             return res.end('Forbidden');
         }
+
         var type = mime[path.extname(file).slice(1)] || 'text/plain';
-    
+
+        console.log(type);
+
         var s = fs.createReadStream(file);
     
         s.on('open', function () {
+            console.log("is open");
             res.setHeader('Content-Type', type);
             s.pipe(res);
         });
         s.on('error', function () {
+            console.log("thriws error");
             res.setHeader('Content-Type', 'text/plain');
             res.statusCode = 404;
             res.end('Not found');
