@@ -1,0 +1,17 @@
+GET 200 1295684Bytes ::1 /image1.jpg  Found
+GET 200 1295684Bytes ::1 /image1.jpg  Found
+GET 200 1295684Bytes ::1 /image1.jpg  Found
+GET 200 1295684Bytes ::1 /image1.jpg  Found
+GET  200  ------  ::1 / On root
+GET  200  ------  ::1 / On root
+GET  200  ------  ::1 / On root
+GET  200  ------  ::1 / On root
+GET  200  ------  ::1 / On root
+GET  200  ------  ::ffff:192.168.68.223 / On root
+GET  404 ------- ::ffff:192.168.68.223 /favicon.ico Content Not found
+GET  200  ------  ::ffff:192.168.68.223 / On root
+GET  200  ------  ::ffff:192.168.68.223 / On root
+GET 200 1295684Bytes ::ffff:192.168.68.223 /image1.jpg  Found
+GET 200 157076Bytes ::ffff:192.168.68.223 /image2.jpg  Found
+GET 200 264Bytes ::ffff:192.168.68.223 /node.txt  Found
+GET  404 ------- ::ffff:192.168.68.223 /java.c Content Not found

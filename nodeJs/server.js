@@ -4,8 +4,9 @@ var fs = require('fs');
 
 
 
-
 var dir = path.join(__dirname, '../resources');
+const outputFile = 'Output.txt';
+let content = '';
 
 var mime = {
     txt: 'text/plain',
@@ -15,6 +16,24 @@ var mime = {
     png: 'image/png'
 };
 
+
+function appendFile(content)
+{
+    try{
+        fs.appendFileSync(outputFile, content);
+    }
+    catch(err){
+        return ;
+    }
+}
+
+
+function getFilesizeInBytes(filename) {
+    var stats = fs.statSync(filename);
+    var fileSizeInBytes = stats.size;
+    return fileSizeInBytes;
+}
+
 const server = http.createServer((req, res) => {
     const { method, url } = req;
     res.status = 200;
@@ -22,6 +41,7 @@ const server = http.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "*");
     res.setHeader("Access-Control-Allow-Headers", "*");
+
 
     if(url === "/" && method === "GET")
     {
@@ -39,42 +59,34 @@ const server = http.createServer((req, res) => {
             }) 
 
             filesList += "To see spesific file \n";
-           
-
-            console.log(filesList);
-            res.end(filesList);
             
+            appendFile(`${req.method}  ${res.statusCode}  ------  ${req.socket.remoteAddress} ${url} On root\n`);
+            res.end(filesList);
         })
     }
 
-    if(method === "GET" && url)
+    else if(method === "GET" && url)
     {
         var reqpath = req.url;
-        console.log(reqpath);
 
         var file = path.join(dir, reqpath);
-    
-        if (file.indexOf(dir + path.sep) !== 0) {
-            res.statusCode = 403;
-            res.setHeader('Content-Type', 'text/plain');
-            return res.end('Forbidden');
-        }
 
         var type = mime[path.extname(file).slice(1)] || 'text/plain';
-
+        res.setHeader('Content-Type', type);
         console.log(type);
 
         var s = fs.createReadStream(file);
     
         s.on('open', function () {
+            appendFile(`GET ${res.statusCode} ${getFilesizeInBytes(file)}Bytes ${req.socket.remoteAddress} ${url}  Found\n`);
             console.log("is open");
-            res.setHeader('Content-Type', type);
             s.pipe(res);
         });
         s.on('error', function () {
+            
             console.log("thriws error");
-            res.setHeader('Content-Type', 'text/plain');
             res.statusCode = 404;
+            appendFile(`GET  ${res.statusCode} ------- ${req.socket.remoteAddress} ${url} Content Not found\n`);
             res.end('Not found');
         });
     }
@@ -83,4 +95,11 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000, function () {
     console.log('Listening on http://localhost:3000/');
+    console.log(content);
+    if (!fs.existsSync('/home/dsi/Documents/Task/nodeJs/Output.txt')) {
+        fs.writeFileSync(outputFile, content);
+    } else {
+        fs.writeFileSync(outputFile, content);
+    }
+ 
 });
