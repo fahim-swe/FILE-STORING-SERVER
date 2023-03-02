@@ -11,8 +11,10 @@ const mimeTypes = {
   jpg: 'image/jpeg',
   jpeg: 'image/jpeg',
   png: 'image/png',
+  mp4: 'video/mp4',
+  webm: 'video/webm',
+  ogv: 'video/ogg',
 };
-
 // Set max header size to 1 MB
 const server = http.createServer((req, res) => {
   req.connection.server.maxHeaderSize = 1024 * 1024;
@@ -56,6 +58,7 @@ function handleGetRootRequest(req, res) {
   
   
 
+
 function handleGetRequest(req, res) {
   const requestedFile = path.join(resourcesDir, req.url);
 
@@ -65,6 +68,22 @@ function handleGetRequest(req, res) {
     return;
   }
 
+ 
+  const stats = fs.statSync(requestedFile);
+  if (stats.isDirectory()) {
+    const filesList = scanDirectory(requestedFile);
+
+    const responseContent = [
+      '<h1>List of Files:</h1>',
+      ...filesList.map((file, index) => `<p>${index + 1}. <a target="_blank" href="${file}">${file}</a></p>`)
+    ].join('\n');
+
+    appendToLog(req, res, 200, 'On directory');
+    respondWithContent(res, responseContent, 'text/html');
+    return;
+  }
+
+ 
   const contentType = mimeTypes[path.extname(requestedFile).slice(1)] || 'text/plain';
   res.setHeader('Content-Type', contentType);
 
@@ -87,6 +106,31 @@ function handleGetRequest(req, res) {
     });
   });
 }
+
+function scanDirectory(directoryPath) {
+  let filesList = [];
+
+  const entries = fs.readdirSync(directoryPath, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const fullPath = path.join(directoryPath, entry.name);
+    if (entry.isDirectory()) {
+
+      const subdirectoryFiles = scanDirectory(fullPath);
+      filesList = filesList.concat(subdirectoryFiles);
+    } else {
+      filesList.push(path.basename(fullPath));
+    }
+  }
+
+  return filesList;
+}
+
+
+
+
+
+
 
 function appendToLog(req, res, statusCode, message) {
   const logLine = `${new Date().toISOString()} ${req.method} ${statusCode} ${req.socket.remoteAddress} ${req.url} ${message}\n`;

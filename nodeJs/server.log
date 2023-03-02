@@ -15,3 +15,142 @@
 2023-03-02T06:38:45.838Z GET 200 ::1 /node.txt Found
 2023-03-02T06:38:49.517Z GET 200 ::1 /image1.jpg Found
 2023-03-02T06:39:47.108Z GET 200 ::1 /image1.jpg Found
+2023-03-02T06:46:36.560Z GET 200 ::1 / On root
+2023-03-02T06:46:38.274Z GET 200 ::1 /image1.jpg Found
+2023-03-02T06:46:44.487Z GET 404 ::1 /image1sdfsdf Content not found
+2023-03-02T06:52:28.884Z GET 200 ::1 / On root
+2023-03-02T06:52:30.266Z GET 404 ::1 /001%20Introduction.mp4 Content not found
+2023-03-02T06:52:33.019Z GET 404 ::1 /001%20Introduction.mp4 Content not found
+2023-03-02T06:52:33.603Z GET 404 ::1 /001%20Introduction.mp4 Content not found
+2023-03-02T06:52:38.255Z GET 404 ::1 /001%20Introduction.mp4 Content not found
+2023-03-02T06:53:20.664Z GET 404 ::1 /001%20Introduction.mp4 Content not found
+2023-03-02T06:53:27.867Z GET 200 ::1 / On root
+2023-03-02T06:53:32.123Z GET 404 ::1 /001%20Introduction.mp4 Content not found
+2023-03-02T06:53:52.669Z GET 200 ::1 / On root
+2023-03-02T06:53:54.130Z GET 200 ::1 /video.mp4 Found
+2023-03-02T06:53:59.905Z GET 200 ::1 /video.mp4 Found
+2023-03-02T06:54:04.072Z GET 200 ::1 /video.mp4 Found
+2023-03-02T06:56:37.734Z GET 200 ::1 / On root
+2023-03-02T06:56:39.127Z GET 200 ::1 /video.mp4 Found
+2023-03-02T06:56:39.191Z GET 200 ::1 /video.mp4 Found
+2023-03-02T06:59:15.080Z GET 200 ::1 / On root
+2023-03-02T06:59:17.913Z GET 200 ::1 /Video Found
+2023-03-02T06:59:17.917Z GET 500 ::1 /Video Internal server error - Unable to read file: EISDIR: illegal operation on a directory, read
+2023-03-02T06:59:21.624Z GET 200 ::1 / On root
+2023-03-02T07:04:03.484Z GET 200 ::1 / On root
+2023-03-02T07:04:05.413Z GET 200 ::1 /Video On directory
+2023-03-02T07:04:09.320Z GET 404 ::1 /home/dsi/Documents/Task/resources/Video/video.mp4 Content not found
+2023-03-02T07:04:14.213Z GET 404 ::1 /home/dsi/Documents/Task/resources/Video/video.mp4 Content not found
+2023-03-02T07:04:17.041Z GET 404 ::1 /home/dsi/Documents/Task/resources/Video/video.mp4 Content not found
+2023-03-02T07:04:23.738Z GET 404 ::1 /home/dsi/Documents/Task/resources/Video/video.mp4 Content not found
+2023-03-02T07:04:41.168Z GET 200 ::1 /Video On directory
+2023-03-02T07:04:45.166Z GET 200 ::1 /Video On directory
+2023-03-02T07:06:28.771Z GET 200 ::1 / On root
+2023-03-02T07:06:31.386Z GET 200 ::1 / On root
+2023-03-02T07:06:31.970Z GET 200 ::1 / On root
+2023-03-02T07:06:32.330Z GET 200 ::1 / On root
+2023-03-02T07:06:59.550Z GET 200 ::1 / On root
+2023-03-02T07:07:00.186Z GET 200 ::1 / On root
+2023-03-02T07:07:00.491Z GET 200 ::1 / On root
+2023-03-02T07:07:51.041Z GET 200 ::1 / On root
+2023-03-02T07:07:53.059Z GET 200 ::1 /Video Found
+2023-03-02T07:07:53.063Z GET 500 ::1 /Video Internal server error - Unable to read file: EISDIR: illegal operation on a directory, read
+2023-03-02T07:07:57.012Z GET 200 ::1 /Video Found
+2023-03-02T07:07:57.013Z GET 500 ::1 /Video Internal server error - Unable to read file: EISDIR: illegal operation on a directory, read
+2023-03-02T07:08:25.710Z GET 200 ::1 / On root
+2023-03-02T07:08:27.633Z GET 200 ::1 /Video On directory
+2023-03-02T07:08:31.276Z GET 404 ::1 /home/dsi/Documents/Task/resources/Video/video.mp4 Content not found
+2023-03-02T07:08:43.536Z GET 200 ::1 //Video/video.mp4 Found
+2023-03-02T07:08:43.573Z GET 200 ::1 //Video/video.mp4 Found
+2023-03-02T07:09:09.253Z GET 200 ::1 / On root
+2023-03-02T07:09:10.731Z GET 200 ::1 /Video On directory
+2023-03-02T07:09:11.928Z GET 404 ::1 /undefined Content not found
+2023-03-02T07:09:30.338Z GET 200 ::1 / On root
+2023-03-02T07:09:32.013Z GET 200 ::1 /Video On directory
+2023-03-02T07:09:48.759Z GET 200 ::1 /Video On directory
+2023-03-02T07:13:56.155Z GET 200 ::1 / On root
+2023-03-02T07:14:02.131Z GET 200 ::1 /Video On directory
+2023-03-02T07:14:03.290Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:14:05.590Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:14:06.228Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:14:42.851Z GET 200 ::1 / On root
+2023-03-02T07:14:44.731Z GET 200 ::1 /Video On directory
+2023-03-02T07:14:46.779Z GET 404 ::1 /video.mp4/video.mp4 Content not found
+2023-03-02T07:15:32.301Z GET 200 ::1 / On root
+2023-03-02T07:15:34.752Z GET 200 ::1 /Video On directory
+2023-03-02T07:15:39.018Z GET 404 ::1 /home/dsi/Documents/Task/resources/Videovideo.mp4 Content not found
+2023-03-02T07:17:06.281Z GET 200 ::1 / On root
+2023-03-02T07:17:06.829Z GET 200 ::1 / On root
+2023-03-02T07:17:07.766Z GET 200 ::1 /Video On directory
+2023-03-02T07:17:09.609Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:18:04.552Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:18:10.404Z GET 200 ::1 /Video On directory
+2023-03-02T07:18:43.147Z GET 200 ::1 / On root
+2023-03-02T07:18:44.108Z GET 200 ::1 /Video On directory
+2023-03-02T07:18:52.219Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:19:43.273Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:19:46.660Z GET 200 ::1 / On root
+2023-03-02T07:19:47.616Z GET 200 ::1 /Video On directory
+2023-03-02T07:19:59.643Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:20:26.977Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:20:30.574Z GET 200 ::1 / On root
+2023-03-02T07:20:31.823Z GET 200 ::1 /Video On directory
+2023-03-02T07:20:33.243Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:20:46.763Z GET 200 ::1 / On root
+2023-03-02T07:20:48.111Z GET 200 ::1 /Video On directory
+2023-03-02T07:20:49.330Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:22:41.221Z GET 200 ::1 / On root
+2023-03-02T07:22:42.629Z GET 200 ::1 / On root
+2023-03-02T07:22:43.909Z GET 200 ::1 /Video On directory
+2023-03-02T07:23:26.308Z GET 200 ::1 / On root
+2023-03-02T07:23:28.150Z GET 200 ::1 /Video On directory
+2023-03-02T07:23:30.532Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:25:01.589Z GET 200 ::1 / On root
+2023-03-02T07:25:03.361Z GET 200 ::1 /002_N_Tier_Architecture.mp4 Found
+2023-03-02T07:25:03.405Z GET 200 ::1 /002_N_Tier_Architecture.mp4 Found
+2023-03-02T07:25:11.673Z GET 200 ::1 /002_N_Tier_Architecture.mp4 Found
+2023-03-02T07:25:11.715Z GET 200 ::1 /002_N_Tier_Architecture.mp4 Found
+2023-03-02T07:26:55.214Z GET 200 ::1 / On root
+2023-03-02T07:26:57.130Z GET 404 ::1 /290%20Angular%20config%20changes.mp4 Content not found
+2023-03-02T07:27:28.937Z GET 200 ::1 / On root
+2023-03-02T07:27:30.857Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T07:27:30.914Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T07:28:06.077Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T07:28:11.349Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T07:28:35.872Z GET 200 ::1 / On root
+2023-03-02T07:28:37.613Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T07:28:37.659Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T07:29:06.783Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:06.856Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:07.728Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:07.757Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:12.413Z GET 200 ::1 / On root
+2023-03-02T07:29:12.956Z GET 200 ::1 / On root
+2023-03-02T07:29:14.044Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:14.085Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:25.260Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:25.297Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:27.475Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:27.514Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:27.749Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:27.791Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:27.956Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:27.999Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:28.156Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:28.227Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:28.362Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:29:28.446Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:30:00.043Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:30:00.080Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:31:02.908Z GET 200 ::1 / On root
+2023-03-02T07:31:06.176Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:31:06.212Z GET 403 ::1 /290_Angular_config_changes.mp4 Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/290_Angular_config_changes.mp4'
+2023-03-02T07:32:00.026Z GET 200 ::1 / On root
+2023-03-02T07:32:01.959Z GET 200 ::1 /Video On directory
+2023-03-02T07:32:03.015Z GET 404 ::1 /video.mp4 Content not found
+2023-03-02T07:32:09.016Z GET 404 ::1 /290%20Angular%20config%20changes.mp4 Content not found
+2023-03-02T07:32:13.483Z GET 200 ::1 /Video On directory
+2023-03-02T07:34:53.663Z GET 200 ::1 / On root
+2023-03-02T07:34:53.936Z GET 200 ::1 / On root
+2023-03-02T07:34:54.144Z GET 200 ::1 / On root
+2023-03-02T07:34:54.342Z GET 200 ::1 / On root
