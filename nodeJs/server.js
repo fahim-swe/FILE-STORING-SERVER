@@ -84,7 +84,7 @@ function handleGetRequest(req, res) {
   }
 
  
-  const contentType = mimeTypes[path.extname(requestedFile).slice(1)] || 'text/plain';
+  const contentType = mimeTypes[path.extname(requestedFile).slice(1)] || 'application/octet-stream';
   res.setHeader('Content-Type', contentType);
 
   fs.access(requestedFile, fs.constants.R_OK, (err) => {
