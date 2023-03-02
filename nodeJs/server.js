@@ -2,94 +2,111 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const dir = path.join(__dirname, '../resources');
-const outputFile = 'Output.txt';
+const resourcesDir = path.join(__dirname, '../resources');
+const outputFile = 'server.log';
 
-const mime = {
+const mimeTypes = {
   txt: 'text/plain',
   gif: 'image/gif',
-  jpg: 'image/jpg',
+  jpg: 'image/jpeg',
   jpeg: 'image/jpeg',
-  png: 'image/png'
+  png: 'image/png',
 };
 
-function appendFile(content) {
-  try {
-    fs.appendFileSync(outputFile, content);
-  } catch (err) {
-    console.error(err);
-  }
-}
+// Set max header size to 1 MB
+const server = http.createServer((req, res) => {
+  req.connection.server.maxHeaderSize = 1024 * 1024;
 
-function getFileSizeInBytes(filename) {
-  const stats = fs.statSync(filename);
-  const fileSizeInBytes = stats.size;
-  return fileSizeInBytes;
-}
+  if (req.method !== 'GET') {
+    res.statusCode = 405;
+    res.setHeader('Allow', 'GET');
+    res.end('Method Not Allowed');
+    return;
+  }
+
+  if (req.url === '/') {
+    handleGetRootRequest(req, res);
+  } else {
+    handleGetRequest(req, res);
+  }
+});
+
+
 
 function handleGetRootRequest(req, res) {
-  fs.readdir(dir, function (err, files) {
+    fs.readdir(resourcesDir, (err, files) => {
+      if (err) {
+        console.error(`Unable to scan directory: ${err}`);
+        appendToLog(req, res, 500, `Internal Server Error - Unable to scan directory: ${err.message}`);
+        res.end('Internal Server Error');
+        return;
+      }
+  
+      const filesList = ['<h1>List of Files:</h1>'];
+      files.forEach((file, index) => {
+        filesList.push(`<p>${index + 1}. <a target="_blank" href="${file}">${file}</a></p>`);
+      });
+  
+      const responseContent = filesList.join('\n');
+  
+      appendToLog(req, res, 200, 'On root');
+      respondWithContent(res, responseContent, 'text/html');
+    });
+  }
+  
+  
+
+function handleGetRequest(req, res) {
+  const requestedFile = path.join(resourcesDir, req.url);
+
+  if (!fs.existsSync(requestedFile)) {
+    appendToLog(req, res, 404, 'Content not found');
+    res.end('Not Found');
+    return;
+  }
+
+  const contentType = mimeTypes[path.extname(requestedFile).slice(1)] || 'text/plain';
+  res.setHeader('Content-Type', contentType);
+
+  fs.access(requestedFile, fs.constants.R_OK, (err) => {
     if (err) {
-      console.error('Unable to scan directory: ' + err);
-      res.statusCode = 500;
-      res.end('Internal Server Error');
+      appendToLog(req, res, 403, `Forbidden - Unable to access file: ${err.message}`);
+      res.end('Forbidden');
       return;
     }
 
-    const filesList = ['LIST OF FILES'];
-    files.forEach(function (file, index) {
-      filesList.push(`${index + 1}. ${file}`);
+    const fileStream = fs.createReadStream(requestedFile);
+    fileStream.on('open', () => {
+      appendToLog(req, res, 200, 'Found');
+      fileStream.pipe(res);
     });
-    filesList.push('To see specific file');
 
-    const responseContent = filesList.join('\n');
-
-    appendFile(`${req.method}  ${res.statusCode}  ------  ${req.socket.remoteAddress} ${req.url} On root\n`);
-
-    res.setHeader('Content-Type', 'text/plain');
-    res.end(responseContent);
+    fileStream.on('error', (err) => {
+      appendToLog(req, res, 500, `Internal server error - Unable to read file: ${err.message}`);
+      res.end(`Internal Server Error: ${err.message}`);
+    });
   });
 }
 
-function handleGetRequest(req, res) {
-  const reqPath = req.url;
-  const file = path.join(dir, reqPath);
+function appendToLog(req, res, statusCode, message) {
+  const logLine = `${new Date().toISOString()} ${req.method} ${statusCode} ${req.socket.remoteAddress} ${req.url} ${message}\n`;
 
-  const contentType = mime[path.extname(file).slice(1)] || 'text/plain';
+  try {
+    fs.appendFileSync(outputFile, logLine);
+  } catch (err) {
+    console.error(`Unable to append to log: ${err}`);
+  }
+}
+
+function respondWithContent(res, content, contentType) {
   res.setHeader('Content-Type', contentType);
-
-  const s = fs.createReadStream(file);
-
-  s.on('open', function () {
-    appendFile(`GET ${res.statusCode} ${getFileSizeInBytes(file)} Bytes ${req.socket.remoteAddress} ${req.url} Found\n`);
-    s.pipe(res);
-  });
-
-  s.on('error', function () {
-    res.statusCode = 404;
-    appendFile(`GET  ${res.statusCode} ------- ${req.socket.remoteAddress} ${req.url} Content Not found\n`);
-    res.end('Not found');
-  });
+  res.end(content);
 }
 
-const server = http.createServer((req, res) => {
-  res.status = 200;
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-
-  if (req.method === 'GET') {
-    if (req.url === '/') {
-      handleGetRootRequest(req, res);
-    } else {
-      handleGetRequest(req, res);
+server.listen(3000, () => {
+    console.log('Listening on http://localhost:3000/');
+    if (!fs.existsSync(outputFile)) {
+      fs.writeFileSync(outputFile, '');
     }
-  }
-});
-
-server.listen(3000, function () {
-  console.log('Listening on http://localhost:3000/');
-  if (!fs.existsSync(outputFile)) {
-    fs.writeFileSync(outputFile, '');
-  }
-});
+  });
+  
