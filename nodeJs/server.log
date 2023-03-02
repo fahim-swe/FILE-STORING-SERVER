@@ -154,3 +154,69 @@
 2023-03-02T07:34:53.936Z GET 200 ::1 / On root
 2023-03-02T07:34:54.144Z GET 200 ::1 / On root
 2023-03-02T07:34:54.342Z GET 200 ::1 / On root
+2023-03-02T07:58:15.163Z GET 200 ::1 / On root
+2023-03-02T07:58:19.095Z GET 200 ::1 /Video On directory
+2023-03-02T07:58:38.320Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T07:58:38.364Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T07:59:23.769Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T07:59:23.978Z GET 200 ::1 /290_Angular_config_changes.mp4 Found
+2023-03-02T08:00:58.474Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:42.972Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:44.190Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:44.548Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:44.757Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:44.967Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:45.190Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:45.377Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:45.574Z GET 404 ::1 /290_Angular_config_changes.mp4 Content not found
+2023-03-02T08:02:48.277Z GET 200 ::1 / On root
+2023-03-02T08:33:12.816Z GET 200 ::1 / On root
+2023-03-02T08:33:15.641Z GET 200 ::1 /image1.jpg Found
+2023-03-02T08:33:21.057Z GET 200 ::1 /Video On directory
+2023-03-02T08:43:43.496Z GET 200 ::1 / On root
+2023-03-02T08:43:47.895Z GET 200 ::1 /video.mp4 Found
+2023-03-02T08:43:47.937Z GET 200 ::1 /video.mp4 Found
+2023-03-02T08:44:00.030Z GET 200 ::1 / On root
+2023-03-02T08:44:01.963Z GET 200 ::1 /video.mp4 Found
+2023-03-02T08:44:02.004Z GET 200 ::1 /video.mp4 Found
+2023-03-02T08:44:10.568Z GET 200 ::1 /image2.jpg Found
+2023-03-02T08:44:15.416Z GET 200 ::1 /image1.jpg Found
+2023-03-02T08:44:35.251Z GET 200 ::1 / On root
+2023-03-02T08:44:36.428Z GET 200 ::1 /fahim_cv.pdf Found
+2023-03-02T08:44:39.448Z GET 200 ::1 /fahim_cv.pdf Found
+2023-03-02T08:44:43.529Z GET 200 ::1 /fahim_cv.pdf Found
+2023-03-02T08:44:46.786Z GET 200 ::1 /image1.jpg Found
+2023-03-02T08:45:25.269Z GET 200 ::1 /fahim_cv.pdf Found
+2023-03-02T08:45:28.368Z GET 200 ::1 / On root
+2023-03-02T08:45:31.710Z GET 200 ::1 /Video On directory
+2023-03-02T08:47:04.820Z GET 200 ::1 / On root
+2023-03-02T08:47:05.450Z GET 200 ::1 / On root
+2023-03-02T08:56:31.631Z GET 200 ::1 / On root
+2023-03-02T12:40:35.083Z GET 200 ::1 / On root
+2023-03-02T12:40:37.715Z GET 200 ::1 /fahim_cv.pdf Found
+2023-03-02T12:40:40.745Z GET 200 ::1 /node.txt Found
+2023-03-02T12:40:47.290Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:40:47.330Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:40:55.738Z GET 200 ::1 /Video On directory
+2023-03-02T12:40:56.648Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:40:56.689Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:01.449Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:01.489Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:06.861Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:06.902Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:14.857Z GET 200 ::1 /image2.jpg Found
+2023-03-02T12:41:24.763Z GET 200 ::1 /image1.jpg Found
+2023-03-02T12:41:34.846Z GET 200 ::1 /image1.jpg Found
+2023-03-02T12:41:52.062Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:52.099Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:57.540Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:41:57.586Z GET 200 ::1 /video.mp4 Found
+2023-03-02T12:42:47.335Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:42:54.546Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:43:03.545Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:43:10.440Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:44:02.925Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:44:10.524Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:44:13.664Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:45:54.714Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
+2023-03-02T12:46:00.129Z GET 403 ::1 /node.txt Forbidden - Unable to access file: EACCES: permission denied, access '/home/dsi/Documents/Task/resources/node.txt'
