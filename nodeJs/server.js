@@ -90,6 +90,7 @@ function handleGetRequest(req, res) {
   fs.access(requestedFile, fs.constants.R_OK, (err) => {
     if (err) {
       appendToLog(req, res, 403, `Forbidden - Unable to access file: ${err.message}`);
+      res.statusCode = 403;
       res.end('Forbidden');
       return;
     }
