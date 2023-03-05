@@ -15,9 +15,10 @@ const mimeTypes = {
   webm: 'video/webm',
   ogv: 'video/ogg',
 };
-// Set max header size to 1 MB
+
+
 const server = http.createServer((req, res) => {
-  req.connection.server.maxHeaderSize = 1024 * 1024;
+  
 
   if (req.method !== 'GET') {
     res.statusCode = 405;
@@ -114,14 +115,9 @@ function scanDirectory(directoryPath) {
   const entries = fs.readdirSync(directoryPath, { withFileTypes: true });
 
   for (const entry of entries) {
-    const fullPath = path.join(directoryPath, entry.name);
-    if (entry.isDirectory()) {
-
-      const subdirectoryFiles = scanDirectory(fullPath);
-      filesList = filesList.concat(subdirectoryFiles);
-    } else {
-      filesList.push(path.basename(fullPath));
-    }
+    filesList.push(directoryPath.split('/')[directoryPath.split('/').length-1] +'/'+ entry.name);
+   // console.log(directoryPath);
+   // console.log( directoryPath.split('/')[directoryPath.split('/').length-1]);
   }
 
   return filesList;
